@@ -1,18 +1,13 @@
-FROM golang:1.14 as backend
+FROM golang:1.14.7 as backend
 
 
-WORKDIR /go/src/github.com/hanxinhisen/thc_moss/cmd/server
+WORKDIR /go/src/github.com/hanxinhisen/thc_moss
 
-COPY cmd/server .
-
-COPY go.mod /go/src/github.com/hanxinhisen/thc_moss
-
-COPY go.sum /go/src/github.com/hanxinhisen/thc_moss
 
 RUN export GO111MODULE=on && \
     export GOPROXY=https://goproxy.cn && \
-    go build main.go && \
-    mv main thc_moss && /
+    go build cmd/server/main.go && \
+    mv main thc_moss
 
 FROM 360cloud/centos:7
 
