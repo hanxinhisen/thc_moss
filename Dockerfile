@@ -10,6 +10,7 @@ COPY go.mod /go/src/github.com/hanxinhisen/thc_moss
 COPY go.sum /go/src/github.com/hanxinhisen/thc_moss
 
 RUN export GO111MODULE=on && \
+    export GOPROXY=https://goproxy.cn && \
     go build main.go && \
     mv main thc_moss && /
 
