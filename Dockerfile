@@ -1,11 +1,11 @@
-FROM golang:1.14 as backend
+FROM golang:1.14.7 as backend
 
 
 WORKDIR /go/src/github.com/hanxinhisen/thc_moss
 
 
-COPY cmd/* /go/src/github.com/hanxinhisen/thc_moss
-COPY pkg/* /go/src/github.com/hanxinhisen/thc_moss
+COPY cmd /go/src/github.com/hanxinhisen/thc_moss
+COPY pkg /go/src/github.com/hanxinhisen/thc_moss
 COPY go.mod /go/src/github.com/hanxinhisen/thc_moss
 COPY go.sum /go/src/github.com/hanxinhisen/thc_moss
 
