@@ -2,11 +2,17 @@
 package views
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"os"
 )
 
 func Index(c *gin.Context) {
-	c.String(http.StatusOK, "v1.1")
+	hostname, err := os.Hostname()
+	if err != nil {
+		hostname = "Unknown"
+	}
+	c.String(http.StatusOK, fmt.Sprintf("v1.2--%s", hostname))
 
 }
