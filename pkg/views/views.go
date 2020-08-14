@@ -7,6 +7,6 @@ import (
 )
 
 func Index(c *gin.Context) {
-	c.String(http.StatusOK, "v1.0")
+	c.String(http.StatusOK, "v1.1")
 
 }
